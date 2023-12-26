@@ -28,19 +28,18 @@ namespace Egitim1
             {
                 Console.Write("çekilecek bakiye : ");
                 int cekilen_miktar = Convert.ToInt32(Console.ReadLine());
-                if (cekilen_miktar <= bakiye)
+                if (cekilen_miktar > bakiye)
                 {
                    
-                    Console.WriteLine("kalan bakiye: " + (bakiye - cekilen_miktar));
+                    Console.WriteLine("tekrar giriniz");
                     Console.ReadLine();
 
                 }
                 else
                 {
-                    Console.WriteLine("tekrar giriniz");
+                    Console.WriteLine("kalan bakiye: " + (bakiye - cekilen_miktar));
                     Console.ReadLine();
-                    
-                    
+        
                 }
 
             }
