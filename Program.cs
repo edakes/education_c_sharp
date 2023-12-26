@@ -4,33 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Condition2
+namespace Condition4
 {
     internal class Program
     {
-        static void Main(string[] args)                       //Height weight index in condition
+        static void Main(string[] args)
         {
-            Console.WriteLine("Enter your weight: ");
-            int weight=Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter your height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            //User login test (kullanıcı girişi test)
+            int trial = 3;
+            while (true)
+            {
+                Console.WriteLine("please enter your nickname: ");
+                string nickname = Console.ReadLine();
 
-            double hwi=Convert.ToDouble(weight/(height*height));
+                Console.WriteLine("please enter your password: ");
+                string pasword = Console.ReadLine();
 
-            if(hwi<18)
-            {
-                Console.WriteLine("You are weak!");
-                Console.ReadLine();
-            }
-            else if (hwi >18 && hwi <25)
-            {
-                Console.WriteLine("You're normal...");
-                Console.ReadLine();
-            }
-            else if(hwi>25)
-            {
-                Console.WriteLine("You are obese");
+                if (nickname == "butterfly" && pasword == "123")
+                {
+                    Console.WriteLine("correct...");
+                    Console.ReadLine();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("nickname or password is incorrect");
+
+                    if (trial > 0)
+                    {
+                        Console.WriteLine("Log in again!");
+                        trial--;
+                       
+                    }
+                    if (trial == 0)
+                    {
+                        Console.WriteLine("Not allowed to log in");
+                            break;
+                    }
+                }
                 Console.ReadLine();
             }
         }
