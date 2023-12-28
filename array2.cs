@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Array2
-{
+{    
+    //find number array2 numara adedi ve numara bulma
     internal class array2
     {
         static void Main(string[] args)
