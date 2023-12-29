@@ -4,47 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Condition4
+namespace Class
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            //sınıf metodlarını buraya çağırırız
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Add();
+            customerManager.Update();
+            Console.ReadLine();
 
-            //User login test (kullanıcı girişi test)
-            int trial = 3;
-            while (true)
-            {
-                Console.WriteLine("please enter your nickname: ");
-                string nickname = Console.ReadLine();
-
-                Console.WriteLine("please enter your password: ");
-                string pasword = Console.ReadLine();
-
-                if (nickname == "butterfly" && pasword == "123")
-                {
-                    Console.WriteLine("correct...");
-                    Console.ReadLine();
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("nickname or password is incorrect");
-
-                    if (trial > 0)
-                    {
-                        Console.WriteLine("Log in again!");
-                        trial--;
-                       
-                    }
-                    if (trial == 0)
-                    {
-                        Console.WriteLine("Not allowed to log in");
-                            break;
-                    }
-                }
-                Console.ReadLine();
-            }
+        }
+    }
+    //sınıf metodu bu şekilde alt alta verilebilir
+    class CustomerManager
+    {
+        public void Add()
+        {
+            Console.WriteLine("customer added!");
+        }
+        public void Update() 
+        {
+            Console.WriteLine("customer update!");
         }
     }
 }
